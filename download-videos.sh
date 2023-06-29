@@ -1,6 +1,9 @@
 
 #!/bin/bash
 
+git fetch upstream
+git rebase upstream/main
+
 for row in $(cat .problemSiteData.json | jq -r '.[] | @base64')
 do
     _jq() {
